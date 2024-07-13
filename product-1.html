@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasty Choco Forest Photo Cake</title>
+    <style>
+        body {
+            background-color: #f6e8e8;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 90%;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+        }
+        .image {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .details {
+            flex: 2;
+            padding: 20px;
+        }
+        .details h2, .details p, .details ul {
+            margin: 10px 0;
+        }
+        .details ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .details ul li {
+            padding: 5px 0;
+        }
+        .card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .card div {
+            flex: 1;
+        }
+        .card button {
+            padding: 5px 10px;
+            border: none;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .card button:hover {
+            background: #0056b3;
+        }
+        select, input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .add-to-cart {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .add-to-cart input {
+            width: 60px;
+            margin-right: 10px;
+        }
+        .add-to-cart button {
+            padding: 10px 20px;
+            border: none;
+            background: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .add-to-cart button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="assets/product-1.webp" alt="Tasty Choco Forest Photo Cake">
+        </div>
+        <div class="details">
+            <h2><b>Tasty Choco Forest Photo Cake</b></h2>
+            <h2><b>From ₹769.00</b></h2>
+            <p><b>Product Details:</b></p>
+            <ul>
+                <li>Flavor: As Selected</li>
+                <li>Type of Cake: Cream</li>
+                <li>Minimum Weight: Half KG</li>
+                <li>Shape: Round</li>
+                <li>Serves: 4-6 People</li>
+                <li>Size: 6 Inches in Diameter</li>
+                <li>Send an Image With Order Number: <a href="mailto:Images@kinkin.in">Images@kinkin.in</a></li>
+            </ul>
+            <div class="card">
+                <div>Use pincode to check delivery info</div>
+                <input type="text" placeholder="Enter a pin code">
+                <button>CHECK</button>
+            </div>
+            <p>Delivery is available to this area</p>
+            <h3>SELECT DELIVERY TIME</h3>
+            <select name="delivery-time">
+                <option value="choose">Choose an option</option>
+                <option value="standard">Standard 9am - 12pm</option>
+                <option value="12pm-4pm">12pm - 4pm</option>
+                <option value="4pm-8pm">4pm - 8pm</option>
+            </select>
+            <h3>SELECT WEIGHT</h3>
+            <select name="weight">
+                <option value="0.5kg">0.5 KG</option>
+                <option value="1kg">1 KG</option>
+                <option value="1.5kg">1.5 KG</option>
+                <option value="2kg">2 KG</option>
+                <option value="3kg">3 KG</option>
+            </select>
+            <h3>SELECT FLAVOR</h3>
+            <select name="flavor">
+                <option value="black-forest">Black Forest</option>
+                <option value="butterscotch">Butterscotch</option>
+                <option value="chocolate">Chocolate</option>
+                <option value="pineapple">Pineapple</option>
+                <option value="vanilla">Vanilla</option>
+            </select>
+            <h3>SELECT CHOICE</h3>
+            <select name="choice">
+                <option value="eggless">Eggless</option>
+                <option value="normal">Normal</option>
+            </select>
+            <h3>Select Delivery Date *</h3>
+            <input type="date">
+            <h3>Write Message On Gifts, Cakes & Flowers</h3>
+            <textarea rows="4" placeholder="Enter your message here"></textarea>
+            <div class="add-to-cart">
+                <input type="number" value="1" min="1">
+                <button>ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
