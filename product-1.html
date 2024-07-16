@@ -8,29 +8,30 @@
         body {
             background-color: #f6e8e8;
             margin: 0;
-            display: flex;
+            /* display: flex; */
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             height: 100%;
         }
         .container {
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            width: 90%;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+    /* display: flex; */
+    justify-content: space-between; /* Ensure even distribution */
+    width: 65%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
         }
-        .image {
-            flex: 1;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+
+       .image {
+        width: 80%;
+    flex: 1; /* Take up remaining space */
+    padding: 20px;
+    /* display: flex;
+    justify-content: flex-start; */
+    /* align-items: flex-start; */
+}
         .image img {
             max-width: 100%;
             height: auto;
@@ -73,12 +74,35 @@
         .card button:hover {
             background: #0056b3;
         }
-        select, input, textarea {
+        input, textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
+        }
+        .option-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .option-group label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #f8f8f8;
+        }
+        .option-group input {
+            display: none;
+        }
+        .option-group input:checked + label {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
         }
         .add-to-cart {
             display: flex;
@@ -104,56 +128,82 @@
 </head>
 <body>
     <div class="container">
-        <div class="image">
-            <img src="assets/product-1.webp" alt="Tasty Choco Forest Photo Cake">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="image">
+                    <img src="assets/product-1.webp" alt="Tasty Choco Forest Photo Cake">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="details">
+                    <h2><b>Tasty Choco Forest Photo Cake</b></h2>
+                    <h2><b>From ₹769.00</b></h2>
+                    <p><b>Product Details:</b></p>
+                    <ul>
+                        <li>Flavor: As Selected</li>
+                        <li>Type of Cake: Cream</li>
+                        <li>Minimum Weight: Half KG</li>
+                        <li>Shape: Round</li>
+                        <li>Serves: 4-6 People</li>
+                        <li>Size: 6 Inches in Diameter</li>
+                        <li>Send an Image With Order Number: <a href="mailto:Images@kinkin.in">Images@kinkin.in</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="details">
-            <h2><b>Tasty Choco Forest Photo Cake</b></h2>
-            <h2><b>From ₹769.00</b></h2>
-            <p><b>Product Details:</b></p>
-            <ul>
-                <li>Flavor: As Selected</li>
-                <li>Type of Cake: Cream</li>
-                <li>Minimum Weight: Half KG</li>
-                <li>Shape: Round</li>
-                <li>Serves: 4-6 People</li>
-                <li>Size: 6 Inches in Diameter</li>
-                <li>Send an Image With Order Number: <a href="mailto:Images@kinkin.in">Images@kinkin.in</a></li>
-            </ul>
-            <div class="card">
-                <div>Use pincode to check delivery info</div>
+    </div>
+    
+            <!-- <div class="card">
+                <p>Use pincode to check delivery info</p>
                 <input type="text" placeholder="Enter a pin code">
                 <button>CHECK</button>
             </div>
             <p>Delivery is available to this area</p>
             <h3>SELECT DELIVERY TIME</h3>
-            <select name="delivery-time">
-                <option value="choose">Choose an option</option>
-                <option value="standard">Standard 9am - 12pm</option>
-                <option value="12pm-4pm">12pm - 4pm</option>
-                <option value="4pm-8pm">4pm - 8pm</option>
-            </select>
+            <div class="option-group">
+                <input type="radio" id="delivery-time-1" name="delivery-time" value="standard">
+                <label for="delivery-time-1">Standard 9am - 12pm</label>
+                <input type="radio" id="delivery-time-2" name="delivery-time" value="12pm-4pm">
+                <label for="delivery-time-2">12pm - 4pm</label>
+                <input type="radio" id="delivery-time-3" name="delivery-time" value="4pm-8pm">
+                <label for="delivery-time-3">4pm - 8pm</label>
+            </div>
             <h3>SELECT WEIGHT</h3>
-            <select name="weight">
-                <option value="0.5kg">0.5 KG</option>
-                <option value="1kg">1 KG</option>
-                <option value="1.5kg">1.5 KG</option>
-                <option value="2kg">2 KG</option>
-                <option value="3kg">3 KG</option>
-            </select>
+            <div class="option-group">
+                <input type="radio" id="weight-1" name="weight" value="0.5kg">
+                <label for="weight-1">0.5 KG</label>
+                <input type="radio" id="weight-2" name="weight" value="1kg">
+                <label for="weight-2">1 KG</label>
+                <input type="radio" id="weight-3" name="weight" value="1.5kg">
+                <label for="weight-3">1.5 KG</label>
+                <input type="radio" id="weight-4" name="weight" value="2kg">
+                <label for="weight-4">2 KG</label>
+                <input type="radio" id="weight-5" name="weight" value="3kg">
+                <label for="weight-5">3 KG</label>
+            </div>
             <h3>SELECT FLAVOR</h3>
-            <select name="flavor">
-                <option value="black-forest">Black Forest</option>
-                <option value="butterscotch">Butterscotch</option>
-                <option value="chocolate">Chocolate</option>
-                <option value="pineapple">Pineapple</option>
-                <option value="vanilla">Vanilla</option>
-            </select>
+            <div class="option-group">
+                <input type="radio" id="flavor-1" name="flavor" value="black-forest">
+                <label for="flavor-1">Black Forest</label>
+                <input type="radio" id="flavor-2" name="flavor" value="butterscotch">
+                <label for="flavor-2">Butterscotch</label>
+                <input type="radio" id="flavor-3" name="flavor" value="chocolate">
+                <label for="flavor-3">Chocolate</label>
+                <input type="radio" id="flavor-4" name="flavor" value="pineapple">
+                <label for="flavor-4">Pineapple</label>
+                <input type="radio" id="flavor-5" name="flavor" value="vanilla">
+                <label for="flavor-5">Vanilla</label>
+            </div>
+
             <h3>SELECT CHOICE</h3>
-            <select name="choice">
-                <option value="eggless">Eggless</option>
-                <option value="normal">Normal</option>
-            </select>
+            <div class="option-group">
+                <input type="radio" id="choice-1" name="choice" value="eggless">
+                <label for="choice-1">Eggless</label>
+                <input type="radio" id="choice-2" name="choice" value="normal">
+                <label for="choice-2">Normal</label>
+            </div>
+            
+            
             <h3>Select Delivery Date *</h3>
             <input type="date">
             <h3>Write Message On Gifts, Cakes & Flowers</h3>
@@ -161,7 +211,7 @@
             <div class="add-to-cart">
                 <input type="number" value="1" min="1">
                 <button>ADD TO CART</button>
-            </div>
+            </div> -->
         </div>
     </div>
 </body>
